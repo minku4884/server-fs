@@ -12,6 +12,10 @@ app.use(cors());
 // 요청 본문을 JSON으로 파싱하기 위한 미들웨어
 app.use(express.json());
 
+app.get('/zzzz',(req, res) => {
+  res.json({ss:'ss'})
+})
+
 app.post('/log', (req, res) => {
   const { message, stack } = req.body;
   const logMessage = `${new Date().toLocaleString('ko-KR')}\nError \n${message}\nStack Trace:\n${stack}\n\n`;
